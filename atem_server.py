@@ -10,6 +10,7 @@ import select
 
 from client_manager import ClientManager
 from atem_packet import Packet
+import atem_config
 
 
 
@@ -17,13 +18,16 @@ def main():
     # Parse the input aruments
     ap = argparse.ArgumentParser()
 
-    ap.add_argument("--address", required=False, default="0.0.0.0", help="listening IP address, default=\"0.0.0.0\"")
-    ap.add_argument("--port", required=False, default=9910, help="listening UDP Port, default=9910")
-    ap.add_argument("--debug", required=False, default="INFO", help="debug level (in quotes): NONE, INFO (default), WARNING, DEBUG")
+    ap.add_argument("--address", "-a", required=False, default="0.0.0.0", help="listening IP address, default=\"0.0.0.0\"")
+    ap.add_argument("--port", "-p", required=False, default=9910, help="listening UDP Port, default=9910")
+    ap.add_argument("--config", required=False, default="default_config.xml", help="config XML file from ATEM software (default=default_config.xml)")
+    ap.add_argument("--debug", "-d", required=False, default="INFO", help="debug level (in quotes): NONE, INFO (default), WARNING, DEBUG")
+    
 
     args = ap.parse_args()
     host = args.address
     port = args.port
+    config_file = args.config
 
     print("ATEM Server Starting...")
 
@@ -31,6 +35,7 @@ def main():
     s.bind((host, port))
 
     client_mgr = ClientManager()
+    atem_config.config_init(config_file)
 
     print("ATEM Server Running...Hit ctrl-c to exit")
 

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile majorVersion="1" minorVersion="5" product="ATEM Television Studio HD">
+    <MixEffectBlocks>
+        <MixEffectBlock index="0">
+            <Program input="4"/>
+            <Preview input="5"/>
+            <NextTransition selection="Background" nextSelection="Background"/>
+            <TransitionStyle style="Mix" nextStyle="Mix" previewTransition="False" transitionPosition="0">
+                <MixParameters rate="20"/>
+                <DipParameters rate="20" input="0"/>
+                <WipeParameters rate="30" pattern="LeftToRightBar" symmetry="50" xPosition="0.5" yPosition="0.5" reverseDirection="False" flipFlip="False" borderInput="2001" borderWidth="0" borderSoftness="0"/>
+                <DVEParameters rate="30" logoRate="30" reverseDirection="False" flipFlop="False" effect="PushRight" fillSource="3010" keySource="3011" enableKey="True" preMultipliedKey="True" clip="50" gain="70" invertKey="False"/>
+            </TransitionStyle>
+            <Keys>
+                <Key index="0" type="Luma" inputCut="0" inputFill="0" onAir="False" masked="False" maskTop="9" maskBottom="-9" maskLeft="-16" maskRight="16">
+                    <LumaParameters preMultiplied="True" clip="50" gain="70" inverse="False"/>
+                    <ChromaParameters hue="120" gain="100" ySuppress="90" lift="0" narrow="False"/>
+                    <PatternParameters style="DiamondIris" inverse="False" size="50" symmetry="50" softness="0" xPosition="0.5" yPosition="0.5"/>
+                    <DVEParameters maskEnabled="False" maskTop="0" maskBottom="0" maskLeft="0" maskRight="0" shadowEnabled="False" lightSourceDirection="36" lightSourceAltitude="25" borderEnabled="True" borderStyle="None" borderBevelHue="0" borderBevelSaturation="0" borderBevelLuma="100" borderWidthOut="0.5" borderWidthIn="0.5" borderSoftnessOut="0" borderSoftnessIn="0" borderBevelOpacity="100" borderBevelPosition="0.5" borderBevelSoftness="0"/>
+                    <FlyParameters enabled="False" xPosition="0" yPosition="0" xSize="0.5" ySize="0.5" rotation="0" rate="30"/>
+                </Key>
+            </Keys>
+            <FadeToBlack rate="60" isFullyBlack="False"/>
+        </MixEffectBlock>
+    </MixEffectBlocks>
+    <DownstreamKeys>
+        <DownstreamKey index="0" fillSource="1" keySource="1" rate="20" maskEnabled="False" maskTop="9" maskBottom="-9" maskLeft="-16" maskRight="16" preMultipliedKey="False" clip="31" gain="38" invert="False" onAir="False" tie="False"/>
+        <DownstreamKey index="1" fillSource="2" keySource="2" rate="20" maskEnabled="False" maskTop="9" maskBottom="-9" maskLeft="-16" maskRight="16" preMultipliedKey="False" clip="23" gain="40" invert="False" onAir="False" tie="False"/>
+    </DownstreamKeys>
+    <ColorGenerators>
+        <ColorGenerator index="0" hue="50" saturation="100" luma="50"/>
+        <ColorGenerator index="1" hue="27" saturation="100" luma="50"/>
+    </ColorGenerators>
+    <Auxiliaries>
+        <Auxiliary id="8001" input="5"/>
+    </Auxiliaries>
+    <Settings abDirect="False" cameraAux="-1" SDI3GOutputLevel="LevelB">
+        <MultiViewVideoModes>
+            <MultiViewVideoMode coreVideoMode="525i5994 NTSC" multiViewVideoMode="1080i5994"/>
+            <MultiViewVideoMode coreVideoMode="525i5994 16:9" multiViewVideoMode="1080i5994"/>
+            <MultiViewVideoMode coreVideoMode="625i50 PAL" multiViewVideoMode="1080i50"/>
+            <MultiViewVideoMode coreVideoMode="625i50 16:9" multiViewVideoMode="1080i50"/>
+            <MultiViewVideoMode coreVideoMode="720p50" multiViewVideoMode="720p50"/>
+            <MultiViewVideoMode coreVideoMode="720p5994" multiViewVideoMode="720p5994"/>
+            <MultiViewVideoMode coreVideoMode="1080i50" multiViewVideoMode="1080i50"/>
+            <MultiViewVideoMode coreVideoMode="1080i5994" multiViewVideoMode="1080i5994"/>
+            <MultiViewVideoMode coreVideoMode="1080p2398" multiViewVideoMode="1080p2398"/>
+            <MultiViewVideoMode coreVideoMode="1080p24" multiViewVideoMode="1080p24"/>
+            <MultiViewVideoMode coreVideoMode="1080p25" multiViewVideoMode="1080p25"/>
+            <MultiViewVideoMode coreVideoMode="1080p2997" multiViewVideoMode="1080p2997"/>
+            <MultiViewVideoMode coreVideoMode="1080p50" multiViewVideoMode="1080p50"/>
+            <MultiViewVideoMode coreVideoMode="1080p5994" multiViewVideoMode="1080p5994"/>
+        </MultiViewVideoModes>
+        <Talkback sdiMuted="False"/>
+        <Inputs>
+            <Input id="1" shortName="PP1" longName="PP MAIN" externalPortType="HDMI"/>
+            <Input id="2" shortName="PP2" longName="PP THIRDS" externalPortType="HDMI"/>
+            <Input id="3" shortName="IN3" longName="INPUT 3" externalPortType="HDMI"/>
+            <Input id="4" shortName="CAM4" longName="CAMERA 4" externalPortType="HDMI"/>
+            <Input id="5" shortName="CAM1" longName="CAMERA 1" externalPortType="SDI"/>
+            <Input id="6" shortName="CAM2" longName="CAMERA 2" externalPortType="SDI"/>
+            <Input id="7" shortName="CAM3" longName="CAMERA 3" externalPortType="SDI"/>
+            <Input id="8" shortName="CAM5" longName="CAMERA 5" externalPortType="SDI"/>
+        </Inputs>
+        <MixMinusOutputs>
+            <MixMinusOutput index="0" audioMode="ProgramOut"/>
+            <MixMinusOutput index="1" audioMode="ProgramOut"/>
+            <MixMinusOutput index="2" audioMode="ProgramOut"/>
+            <MixMinusOutput index="3" audioMode="ProgramOut"/>
+        </MixMinusOutputs>
+        <MultiViews>
+            <MultiView index="0" layout="ProgramTop" LayoutID="12" vuMeterOpacity="1" programPreviewSwapped="False">
+                <Windows>
+                    <Window index="0" input="10011" vuMeterEnabled="False" safeAreaEnabled="True"/>
+                    <Window index="1" input="10010" vuMeterEnabled="True" safeAreaEnabled="False"/>
+                    <Window index="2" input="5" vuMeterEnabled="False" safeAreaEnabled="False"/>
+                    <Window index="3" input="6" vuMeterEnabled="False" safeAreaEnabled="False"/>
+                    <Window index="4" input="7" vuMeterEnabled="False" safeAreaEnabled="False"/>
+                    <Window index="5" input="4" vuMeterEnabled="False" safeAreaEnabled="False"/>
+                    <Window index="6" input="8" vuMeterEnabled="False" safeAreaEnabled="False"/>
+                    <Window index="7" input="1" vuMeterEnabled="False" safeAreaEnabled="False"/>
+                    <Window index="8" input="2" vuMeterEnabled="False" safeAreaEnabled="False"/>
+                    <Window index="9" input="8001" vuMeterEnabled="False" safeAreaEnabled="False"/>
+                </Windows>
+            </MultiView>
+        </MultiViews>
+        <ButtonMapping>
+            <Button index="0" externalInputIndex="4" mappedToCamera="True"/>
+            <Button index="1" externalInputIndex="5" mappedToCamera="True"/>
+            <Button index="2" externalInputIndex="6" mappedToCamera="True"/>
+            <Button index="3" externalInputIndex="3" mappedToCamera="True"/>
+            <Button index="4" externalInputIndex="7" mappedToCamera="True"/>
+            <Button index="5" externalInputIndex="0" mappedToCamera="True"/>
+            <Button index="6" externalInputIndex="1" mappedToCamera="True"/>
+            <Button index="7" externalInputIndex="-1" mappedToCamera="False"/>
+            <Button index="8" externalInputIndex="8" mappedToCamera="True"/>
+            <Button index="9" externalInputIndex="9" mappedToCamera="True"/>
+        </ButtonMapping>
+        <Remotes>
+            <Remote index="0" function="None"/>
+        </Remotes>
+        <UpstreamKeys sizeLink="True"/>
+    </Settings>
+    <VideoMode videoMode="1080p5994"/>
+    <HyperDecks>
+        <HyperDeck id="0" networkAddress="0.0.0.0" input="0" autoRoll="False" autoRollFrameDelay="0"/>
+        <HyperDeck id="1" networkAddress="0.0.0.0" input="0" autoRoll="False" autoRollFrameDelay="0"/>
+        <HyperDeck id="2" networkAddress="0.0.0.0" input="0" autoRoll="False" autoRollFrameDelay="0"/>
+        <HyperDeck id="3" networkAddress="0.0.0.0" input="0" autoRoll="False" autoRollFrameDelay="0"/>
+    </HyperDecks>
+    <AudioMixer programOutGain="3.05" programOutBalance="0" programOutFollowFadeToBlack="False" audioFollowVideoCrossfadeTransition="True">
+        <AudioInputs>
+            <AudioInput id="1" mixOption="Off" gain="0" balance="0"/>
+            <AudioInput id="2" mixOption="Off" gain="0" balance="0"/>
+            <AudioInput id="3" mixOption="Off" gain="0" balance="0"/>
+            <AudioInput id="4" mixOption="Off" gain="0" balance="0"/>
+            <AudioInput id="5" mixOption="Off" gain="0" balance="0"/>
+            <AudioInput id="6" mixOption="Off" gain="0" balance="0"/>
+            <AudioInput id="7" mixOption="Off" gain="0" balance="0"/>
+            <AudioInput id="8" mixOption="Off" gain="0" balance="0"/>
+            <AudioInput id="1301" mixOption="Off" gain="-inf" balance="0"/>
+            <AudioInput id="1001" mixOption="On" gain="0" balance="0">
+                <XLR rcaToXLR="False"/>
+            </AudioInput>
+        </AudioInputs>
+        <AudioHeadphoneOutputs>
+            <AudioHeadphoneOutput index="0" gain="-14.1" inputProgramOutGain="-6" inputTalkbackGain="-10" inputSidetoneGain="-10"/>
+        </AudioHeadphoneOutputs>
+    </AudioMixer>
+    <MediaPlayers>
+        <MediaPlayer index="0" sourceType="Still" sourceIndex="5"/>
+        <MediaPlayer index="1" sourceType="Still" sourceIndex="17"/>
+    </MediaPlayers>
+    <MediaPool>
+        <Stills>
+            <Still index="3" name="windowsXP_field 9" path="ATEM Media Pool/windowsXP_field 9.png"/>
+            <Still index="5" name="CENTRAL_background-logo_black 2" path="ATEM Media Pool/CENTRAL_background-logo_black 2.png"/>
+            <Still index="7" name="cats 9" path="ATEM Media Pool/cats 9.png"/>
+            <Still index="11" name="warp_speed 9" path="ATEM Media Pool/warp_speed 9.png"/>
+        </Stills>
+    </MediaPool>
+    <CameraControl>
+        <Parameter device="1" category="Lens" parameter="ApertureFstop" value="5.25"/>
+        <Parameter device="1" category="Video" parameter="ManualWhiteBalance" value="5600"/>
+        <Parameter device="1" category="Video" parameter="Exposure" value="20000"/>
+        <Parameter device="1" category="Video" parameter="DetailLevel" value="1"/>
+        <Parameter device="1" category="Video" parameter="SensorGainInDecibels" value="0"/>
+        <Parameter device="1" category="ColorCorrection" parameter="LiftAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="1" category="ColorCorrection" parameter="GammaAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="1" category="ColorCorrection" parameter="GainAdjust" red="1" green="1" blue="1" luma="1"/>
+        <Parameter device="1" category="ColorCorrection" parameter="OffsetAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="1" category="ColorCorrection" parameter="ContrastAdjust" pivot="0.5" adjust="1"/>
+        <Parameter device="1" category="ColorCorrection" parameter="LumaMix" value="1"/>
+        <Parameter device="1" category="ColorCorrection" parameter="ColorAdjust" hue="0" saturation="1"/>
+        <Parameter device="2" category="Lens" parameter="ApertureFstop" value="5.25"/>
+        <Parameter device="2" category="Video" parameter="ManualWhiteBalance" value="5600"/>
+        <Parameter device="2" category="Video" parameter="Exposure" value="20000"/>
+        <Parameter device="2" category="Video" parameter="DetailLevel" value="1"/>
+        <Parameter device="2" category="Video" parameter="SensorGainInDecibels" value="0"/>
+        <Parameter device="2" category="ColorCorrection" parameter="LiftAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="2" category="ColorCorrection" parameter="GammaAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="2" category="ColorCorrection" parameter="GainAdjust" red="1" green="1" blue="1" luma="1"/>
+        <Parameter device="2" category="ColorCorrection" parameter="OffsetAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="2" category="ColorCorrection" parameter="ContrastAdjust" pivot="0.5" adjust="1"/>
+        <Parameter device="2" category="ColorCorrection" parameter="LumaMix" value="1"/>
+        <Parameter device="2" category="ColorCorrection" parameter="ColorAdjust" hue="0" saturation="1"/>
+        <Parameter device="3" category="Lens" parameter="ApertureFstop" value="5.25"/>
+        <Parameter device="3" category="Video" parameter="ManualWhiteBalance" value="5600"/>
+        <Parameter device="3" category="Video" parameter="Exposure" value="20000"/>
+        <Parameter device="3" category="Video" parameter="DetailLevel" value="1"/>
+        <Parameter device="3" category="Video" parameter="SensorGainInDecibels" value="0"/>
+        <Parameter device="3" category="ColorCorrection" parameter="LiftAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="3" category="ColorCorrection" parameter="GammaAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="3" category="ColorCorrection" parameter="GainAdjust" red="1" green="1" blue="1" luma="1"/>
+        <Parameter device="3" category="ColorCorrection" parameter="OffsetAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="3" category="ColorCorrection" parameter="ContrastAdjust" pivot="0.5" adjust="1"/>
+        <Parameter device="3" category="ColorCorrection" parameter="LumaMix" value="1"/>
+        <Parameter device="3" category="ColorCorrection" parameter="ColorAdjust" hue="0" saturation="1"/>
+        <Parameter device="4" category="Lens" parameter="ApertureFstop" value="5.25"/>
+        <Parameter device="4" category="Video" parameter="ManualWhiteBalance" value="5600"/>
+        <Parameter device="4" category="Video" parameter="Exposure" value="20000"/>
+        <Parameter device="4" category="Video" parameter="DetailLevel" value="1"/>
+        <Parameter device="4" category="Video" parameter="SensorGainInDecibels" value="0"/>
+        <Parameter device="4" category="ColorCorrection" parameter="LiftAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="4" category="ColorCorrection" parameter="GammaAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="4" category="ColorCorrection" parameter="GainAdjust" red="1" green="1" blue="1" luma="1"/>
+        <Parameter device="4" category="ColorCorrection" parameter="OffsetAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="4" category="ColorCorrection" parameter="ContrastAdjust" pivot="0.5" adjust="1"/>
+        <Parameter device="4" category="ColorCorrection" parameter="LumaMix" value="1"/>
+        <Parameter device="4" category="ColorCorrection" parameter="ColorAdjust" hue="0" saturation="1"/>
+        <Parameter device="5" category="Lens" parameter="ApertureFstop" value="5.25"/>
+        <Parameter device="5" category="Video" parameter="ManualWhiteBalance" value="5600"/>
+        <Parameter device="5" category="Video" parameter="Exposure" value="20000"/>
+        <Parameter device="5" category="Video" parameter="DetailLevel" value="1"/>
+        <Parameter device="5" category="Video" parameter="SensorGainInDecibels" value="0"/>
+        <Parameter device="5" category="ColorCorrection" parameter="LiftAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="5" category="ColorCorrection" parameter="GammaAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="5" category="ColorCorrection" parameter="GainAdjust" red="1" green="1" blue="1" luma="1"/>
+        <Parameter device="5" category="ColorCorrection" parameter="OffsetAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="5" category="ColorCorrection" parameter="ContrastAdjust" pivot="0.5" adjust="1"/>
+        <Parameter device="5" category="ColorCorrection" parameter="LumaMix" value="1"/>
+        <Parameter device="5" category="ColorCorrection" parameter="ColorAdjust" hue="0" saturation="1"/>
+        <Parameter device="6" category="Lens" parameter="ApertureFstop" value="5.25"/>
+        <Parameter device="6" category="Video" parameter="ManualWhiteBalance" value="5600"/>
+        <Parameter device="6" category="Video" parameter="Exposure" value="20000"/>
+        <Parameter device="6" category="Video" parameter="DetailLevel" value="1"/>
+        <Parameter device="6" category="Video" parameter="SensorGainInDecibels" value="0"/>
+        <Parameter device="6" category="ColorCorrection" parameter="LiftAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="6" category="ColorCorrection" parameter="GammaAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="6" category="ColorCorrection" parameter="GainAdjust" red="1" green="1" blue="1" luma="1"/>
+        <Parameter device="6" category="ColorCorrection" parameter="OffsetAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="6" category="ColorCorrection" parameter="ContrastAdjust" pivot="0.5" adjust="1"/>
+        <Parameter device="6" category="ColorCorrection" parameter="LumaMix" value="1"/>
+        <Parameter device="6" category="ColorCorrection" parameter="ColorAdjust" hue="0" saturation="1"/>
+        <Parameter device="7" category="Lens" parameter="ApertureFstop" value="5.25"/>
+        <Parameter device="7" category="Video" parameter="ManualWhiteBalance" value="5600"/>
+        <Parameter device="7" category="Video" parameter="Exposure" value="20000"/>
+        <Parameter device="7" category="Video" parameter="DetailLevel" value="1"/>
+        <Parameter device="7" category="Video" parameter="SensorGainInDecibels" value="0"/>
+        <Parameter device="7" category="ColorCorrection" parameter="LiftAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="7" category="ColorCorrection" parameter="GammaAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="7" category="ColorCorrection" parameter="GainAdjust" red="1" green="1" blue="1" luma="1"/>
+        <Parameter device="7" category="ColorCorrection" parameter="OffsetAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="7" category="ColorCorrection" parameter="ContrastAdjust" pivot="0.5" adjust="1"/>
+        <Parameter device="7" category="ColorCorrection" parameter="LumaMix" value="1"/>
+        <Parameter device="7" category="ColorCorrection" parameter="ColorAdjust" hue="0" saturation="1"/>
+        <Parameter device="8" category="Lens" parameter="ApertureFstop" value="5.25"/>
+        <Parameter device="8" category="Video" parameter="ManualWhiteBalance" value="5600"/>
+        <Parameter device="8" category="Video" parameter="Exposure" value="20000"/>
+        <Parameter device="8" category="Video" parameter="DetailLevel" value="1"/>
+        <Parameter device="8" category="Video" parameter="SensorGainInDecibels" value="0"/>
+        <Parameter device="8" category="ColorCorrection" parameter="LiftAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="8" category="ColorCorrection" parameter="GammaAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="8" category="ColorCorrection" parameter="GainAdjust" red="1" green="1" blue="1" luma="1"/>
+        <Parameter device="8" category="ColorCorrection" parameter="OffsetAdjust" red="0" green="0" blue="0" luma="0"/>
+        <Parameter device="8" category="ColorCorrection" parameter="ContrastAdjust" pivot="0.5" adjust="1"/>
+        <Parameter device="8" category="ColorCorrection" parameter="LumaMix" value="1"/>
+        <Parameter device="8" category="ColorCorrection" parameter="ColorAdjust" hue="0" saturation="1"/>
+        <Property device="1" property="ApertureCoarse" value="1"/>
+        <Property device="1" property="Locked" value="False"/>
+        <Property device="2" property="ApertureCoarse" value="1"/>
+        <Property device="2" property="Locked" value="False"/>
+        <Property device="3" property="ApertureCoarse" value="1"/>
+        <Property device="3" property="Locked" value="False"/>
+        <Property device="4" property="ApertureCoarse" value="1"/>
+        <Property device="4" property="Locked" value="False"/>
+        <Property device="5" property="ApertureCoarse" value="1"/>
+        <Property device="5" property="Locked" value="False"/>
+        <Property device="6" property="ApertureCoarse" value="1"/>
+        <Property device="6" property="Locked" value="False"/>
+        <Property device="7" property="ApertureCoarse" value="1"/>
+        <Property device="7" property="Locked" value="False"/>
+        <Property device="8" property="ApertureCoarse" value="1"/>
+        <Property device="8" property="Locked" value="False"/>
+    </CameraControl>
+    <MacroPool>
+        <Macro index="0" name="DSK1" description="">
+            <Op id="DownstreamKeyAuto" keyIndex="0"/>
+        </Macro>
+    </MacroPool>
+    <MacroControl loop="False"/>
+</Profile>

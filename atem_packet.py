@@ -47,6 +47,8 @@ class Packet(object):
                 self.raw_cmd_data = self.bytes[PACKET_HEADER_SIZE:]
             else:
                 while bytes_remaining > 0:
+                    # Iterate through the packet commands and create a list of
+                    # command objects
                     cmd_length, cmd_raw_name = struct.unpack_from('!H 2x 4s', self.bytes, packet_offset)
                     cmd_name = cmd_raw_name.decode('utf-8')
                     cmd_bytes = self.bytes[packet_offset:(packet_offset + cmd_length)]
@@ -82,14 +84,6 @@ class Packet(object):
         #print(f"b1 = {temp}")
         #print(f"b2 = {self.bytes}")
         assert(self.packet_length == len(self.bytes))
-
-
-
-class OutboundPacketContainer(object):
-    def __init__(self):
-        self.last_sent_time = 0
-        self.retransmit_count = 0
-        self.packet = None
 
 
 if __name__ == "__main__":
