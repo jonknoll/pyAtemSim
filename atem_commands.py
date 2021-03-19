@@ -98,6 +98,23 @@ class Cmd_CPgI(ATEMCommand):
         atem_config.conf_db['MixEffectBlocks'][self.me]['Program']['input'] = str(self.video_source)
         #print(f"me{self.me}={atem_config.conf_db['MixEffectBlocks'][self.me]}")
 
+# Preview Input from client, almost identical to Cmd_CPgI (See also PrvI)
+class Cmd_CPvI(ATEMCommand):
+    def __init__(self, bytes=b''):
+        super().__init__(bytes=bytes)
+        self.length = 12
+        self.me = None
+        self.video_source = None
+
+    def parse_cmd(self):
+        self.length = len(self.bytes)
+        self.me, self.video_source = struct.unpack('!B x H', self.bytes[8:12])
+
+    def update_state(self):
+        atem_config.conf_db['MixEffectBlocks'][self.me]['Preview']['input'] = str(self.video_source)
+        #print(f"me{self.me}={atem_config.conf_db['MixEffectBlocks'][self.me]}")
+
+
 # Time
 class Cmd_Time(ATEMCommand):
     def __init__(self, bytes=b''):
@@ -179,12 +196,22 @@ class Cmd_TlSr(ATEMCommand):
 class Cmd_PrgI(ATEMCommand):
     def __init__(self, me=0):
         super().__init__(bytes=bytes)
-        self.length = 12
         self.me = me
 
     def to_bytes(self):
         program_source = int(atem_config.conf_db['MixEffectBlocks'][self.me]['Program']['input'])
         content = struct.pack('!B x H', self.me, program_source)
+        self.bytes = self._build(content)
+
+# Preview Input to client, almost identical to Cmd_PrgI (see also CPvI)
+class Cmd_PrvI(ATEMCommand):
+    def __init__(self, me=0):
+        super().__init__(bytes=bytes)
+        self.me = me
+
+    def to_bytes(self):
+        program_source = int(atem_config.conf_db['MixEffectBlocks'][self.me]['Preview']['input'])
+        content = struct.pack('!B x H 4x', self.me, program_source)
         self.bytes = self._build(content)
 
 
@@ -268,6 +295,7 @@ commands_list = {'_ver' : Cmd__ver,
                 '_pin' : Cmd__pin,
                 'InCm' : Cmd_InCm,
                 'CPgI' : Cmd_CPgI,
+                'CPvI' : Cmd_CPvI,
                 }
 
 def build_current_state_command_list():
@@ -331,6 +359,19 @@ def get_response(cmd_list:List[ATEMCommand]):
             cc.commands.append(Cmd_TlSr(cmd.me))
             # Program Input (PrgI)
             cc.commands.append(Cmd_PrgI(cmd.me))
+            response_list.append(cc)
+        elif isinstance(cmd, Cmd_CPvI):
+            cmd.update_state()
+            print(f"ME: {cmd.me}, Preview Source: {cmd.video_source}")
+            cc = CommandCarrier()
+            # Time
+            cc.commands.append(Cmd_Time())
+            # Tally by Index
+            cc.commands.append(Cmd_TlIn(cmd.me))
+            # Tally by Source
+            cc.commands.append(Cmd_TlSr(cmd.me))
+            # Program Input (PrvI)
+            cc.commands.append(Cmd_PrvI(cmd.me))
             response_list.append(cc)
         else:
             pass
