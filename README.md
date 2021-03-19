@@ -1,7 +1,16 @@
 # pyAtemSim
-## Python Implementation of an ATEM simulator
+## ATEM Switcher Simulator in Python
 
-Starting with ATEM TV Studio HD but maybe more over time
+## Current features:
+* Simulates an ATEM Television Studio HD but maybe more over time.
+* Supports the Blackmagic ATEM software (so you can try the software without hardware
+* Supports multiple simultaneous clients
+* Reads a configuration file from the ATEM software (partially implemented)
+
+## Getting Started:
+* Download this repo
+* From command line type: python atem_server.py
+* Type atem_server.py --help for command line options
 
 ## Useful Links:
 ### Documentation:
@@ -11,7 +20,8 @@ Starting with ATEM TV Studio HD but maybe more over time
 * https://nrkno.github.io/tv-automation-atem-connection/index.html
 
 ### Debugging
-* wireshark-atem-dissector: https://github.com/peschuster/wireshark-atem-dissector
+* wireshark-atem-dissector (updated): https://github.com/jonknoll/wireshark-atem-dissector
+* the original is here: https://github.com/peschuster/wireshark-atem-dissector
 
 ### Other Projects
 * Another ATEM Simulator (swift--mac only): https://github.com/Dev1an/Atem-Simulator
@@ -21,5 +31,6 @@ Starting with ATEM TV Studio HD but maybe more over time
 
 ### Open Source tally light solutions
 * Raspberry Pi based: https://designshift.ca/apps/atem-tally/
+* Raspberry Pi based: https://techministry.blog/
 * https://www.tbdproductions.com.au/software
 * Arduino based: http://kvitko.com/tally/
