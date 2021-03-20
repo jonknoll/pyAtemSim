@@ -43,7 +43,7 @@ def main():
         try:
             # Process incoming packets but timeout after a while so the clients
             # can perform cleanup and resend unresponded packets.
-            readers, writers, errors = select.select([s], [], [], 1.0)
+            readers, writers, errors = select.select([s], [], [], 0.050)
             if len(readers) > 0:
                 try:
                     bytes, addr = s.recvfrom(2048)
